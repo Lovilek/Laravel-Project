@@ -1,6 +1,10 @@
 @include('links')
 
 @include('navbarAuth')
+<head>
+    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+
+</head>
 
 <x-guest-layout>
     <x-auth-card>
