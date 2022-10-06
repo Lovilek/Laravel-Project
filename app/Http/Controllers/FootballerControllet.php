@@ -34,7 +34,7 @@ class FootballerControllet extends Controller
             'name'=>$request->name,
             'surname'=>$request->surname,
             'club'=>$request->club,
-            'position'=>$request->name,
+            'position'=>$request->position,
             'age'=>$request->age,
             'price'=>$request->price,
             'image_id'=>$request->image_id
