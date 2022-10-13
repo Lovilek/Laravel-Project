@@ -15,13 +15,13 @@
 <br>
 
 
-<form class="transparent" action="{{route('image.store')}}" method="POST">
+<form class="transparent" action="{{route('image.store')}}" method="POST" enctype="multipart/form-data">
     @csrf
     <div class="form-inner">
         <label for="username" >Name:</label>
         <input type="text" name="name">
         <label for="username">Url:</label>
-        <input type="text" name="imgSrc">
+        <input type="file" name="imgSrc">
 
         <br>
         <input type="submit" value="Create">

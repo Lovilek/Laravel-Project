@@ -33,13 +33,16 @@ class ImageController extends Controller
 
     public function store(Request $request)
     {
+        if ($request->hasFile('imgSrc')) {
+            $url = $request->file('imgSrc')->store('images');
+            Image::create([
+                'name'=>$request->name,
+                'imgSrc'=>$url
 
-        Image::create([
-            'name'=>$request->name,
-            'imgSrc'=>$request->imgSrc
 
+            ]);
+        }
 
-        ]);
         return redirect()->route('image.index');
 
     }
@@ -66,12 +69,18 @@ class ImageController extends Controller
     public function update(Request $request, $id)
     {
         $pictures=Image::find($id);
-        $pictures->update([
-            'name'=>$request->name,
-            'imgSrc'=>$request->imgSrc
+        $request->hasFile('imgSrc');
+           $url = $request->file('imgSrc')->store('images');
+
+            $pictures->update([
+                'name' => $request->name,
+                'imgSrc' => $url
 
 
-        ]);
+            ]);
+
+
+
         return redirect()->route('image.index');
     }
 

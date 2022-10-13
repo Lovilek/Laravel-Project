@@ -89,7 +89,7 @@
         @foreach($allFootballers as $footballers)
 
     <div class="w3-card-4 w3-margin w3-white" >
-        <img src="@foreach($pictures as $pic) @if($pic->id==$footballers->image_id)  {{$pic->imgSrc}}    @endif @endforeach" alt="Nature" style="width:100%;">
+        <img src="@foreach($pictures as $pic) @if($pic->id==$footballers->image_id)  storage/{{$pic->imgSrc}}    @endif @endforeach" alt="Nature" style="width:100%;">
 
         <div class="w3-container">
             <h3><b> {{$footballers->name}} {{$footballers->surname}} </b></h3>

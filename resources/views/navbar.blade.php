@@ -28,7 +28,7 @@
                 <li class="nav-item">
                     <form action="{{route('logout')}}" method="post">
                         @csrf
-                        <button type="submit">Logout</button>
+                        <button style="background-color: white" class="btn btn-info" type="submit">Logout</button>
                     </form>
                 </li>
 

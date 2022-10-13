@@ -71,19 +71,19 @@
 {{--        </div>--}}
 {{--    </div>--}}
 {{--</div>--}}
-<form class="transparent" action="{{route('image.update',$pictures->id)}}" method="POST">
+<form class="transparent" action="{{route('image.update',$pictures->id)}}" method="POST" enctype="multipart/form-data">
     @csrf
     <div class="form-inner">
         <label for="username" >Name:</label>
         <input type="text" name="name" value="{{$pictures->name}}">
         <label for="username">Url:</label>
-        <input type="text" name="imgSrc"value="{{$pictures->imgSrc}}">
+        <input type="file" name="imgSrc" value="{{$pictures->imgSrc}}">
 
         <br>
         <input type="submit" value="Edit">
     </div>
 </form>
-<form class="transparent" action="{{route('image.destroy',$pictures->id)}}" method="post">
+<form class="transparent" action="{{route('image.destroy',$pictures->id)}}" method="post" enctype="multipart/form-data">
     @csrf
 `    <div class="form-inner">
 `        <label for="username">Delete Image:</label>
