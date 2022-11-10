@@ -9,78 +9,7 @@
    @include('backGroundImage')
 </head>
 <body >
-{{--<div class="container">--}}
-{{--    <div class="row">--}}
-{{--        <div class="col">--}}
-{{--<table class="table table-striped table-dark">--}}
-{{--    <thead>--}}
-{{--    <tr>--}}
-{{--        <th scope="col">--}}
-{{--            Name--}}
-{{--        </th>--}}
-{{--        <th scope="col">--}}
-{{--            Surname--}}
-{{--        </th>--}}
-{{--        <th scope="col">--}}
-{{--            Club--}}
-{{--        </th>--}}
-{{--        <th scope="col">--}}
-{{--            Position--}}
-{{--        </th>--}}
-{{--        <th scope="col">--}}
-{{--            Age--}}
-{{--        </th>--}}
-{{--        <th scope="col">--}}
-{{--        Price--}}
-{{--        </th>--}}
-{{--        <th scope="col">--}}
-{{--            #--}}
-{{--        </th>--}}
-{{--        <th scope="col">--}}
-{{--            #--}}
-{{--        </th>--}}
-{{--    </tr>--}}
-{{--    </thead>--}}
-{{--    <tbody>--}}
-{{--    @foreach($allFootballers as $footballers)--}}
 
-
-
-{{--    <tr>--}}
-{{--        <td scope="row" >--}}
-{{--        {{$footballers->name}}--}}
-{{--    </td>--}}
-{{--    <td>--}}
-{{--        {{$footballers->surname}}--}}
-{{--    </td>--}}
-{{--    <td>--}}
-{{--        {{$footballers->club}}--}}
-{{--    </td>--}}
-{{--        <td>--}}
-{{--            {{$footballers->position}}--}}
-{{--        </td>--}}
-{{--        <td>--}}
-{{--            {{$footballers->age}}--}}
-{{--        </td>--}}
-{{--        <td>--}}
-{{--            {{$footballers->price}}--}}
-{{--        </td>--}}
-{{--    <td>--}}
-{{--        <a href="{{route('football.edit',$footballers->id)}}">Edit </a>--}}
-{{--    </td>--}}
-{{--        <td>--}}
-{{--            <a href="{{route('football.show',$footballers->id)}}">Show</a>--}}
-{{--        </td>--}}
-{{--    </tr>--}}
-{{--    @endforeach--}}
-{{--    </tbody>--}}
-{{--</table>--}}
-
-{{--            <a  type="button" class="btn btn-primary" href="{{route('football.create')}}">Create</a>--}}
-
-{{--        </div>--}}
-{{--    </div>--}}
-{{--</div>--}}
 
 @include('navbar')
 <div class="w3-w3-card-4 w3-center  " style="width:75% ;padding-left:310px;" >

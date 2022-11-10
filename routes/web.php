@@ -31,7 +31,7 @@ Route::get('/football/{id}',[\App\Http\Controllers\FootballerControllet::class,'
 Route::get('/image',[\App\Http\Controllers\ImageController::class,'index'])->name('image.index');
 Route::get('/image/create',[\App\Http\Controllers\ImageController::class,'create'])->name('image.create');
 Route::get('/image/{id}/edit',[\App\Http\Controllers\ImageController::class,'edit'])->name('image.edit');
-Route::post('/image/{id}/destroy',[\App\Http\Controllers\ImageController::class,'delete'])->name('image.destroy');
+Route::post('/image/{id}/destroy',[\App\Http\Controllers\ImageController::class,'destroy'])->name('image.destroy');
 Route::post('/image',[\App\Http\Controllers\ImageController::class,'store'])->name('image.store');
 Route::post('/image/{id}',[\App\Http\Controllers\ImageController::class,'update'])->name('image.update');
 Route::get('/image/{id}',[\App\Http\Controllers\ImageController::class,'show'])->name('image.show');

@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Services\FootballService;
+use App\Services\Impl\FootballServiceImpl;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -13,7 +15,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->bind(FootballService::class, FootballServiceImpl::class);
     }
 
     /**

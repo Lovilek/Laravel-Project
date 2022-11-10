@@ -17,3 +17,12 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::get('/fottballapi',[\App\Http\Controllers\API\FootballerControllerApi::class,'index']);
+Route::post('/fottballcreateapi',[\App\Http\Controllers\API\FootballerControllerApi::class,'create']);
+Route::get('/fottballapi/{id}',[\App\Http\Controllers\API\FootballerControllerApi::class,'findId']);
+Route::post('/fottballupdateapi/{id}',[\App\Http\Controllers\API\FootballerControllerApi::class,'update']);
+Route::post('/fottballdeleteapi/{id}',[\App\Http\Controllers\API\FootballerControllerApi::class,'delete']);
+
+
+
+
