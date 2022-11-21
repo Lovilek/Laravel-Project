@@ -49,7 +49,8 @@ class FootballerControllet extends Controller
         $pictures=Image::all();
 
         $footballer=Fottbalers::find($id);
-        return view('show',['football'=>$footballer,'pictures'=>$pictures]);
+        $picture=Image::find($footballer->image_id);
+        return view('show',['football'=>$footballer,'picture'=>$pictures]);
     }
 
 

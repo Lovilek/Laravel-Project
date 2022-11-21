@@ -88,7 +88,7 @@
         <input type="number" name="price"value="{{$football->price}}">
         <select name="image_id">
             @foreach($pictures as $pic)
-                <option value="{{$pic->id}}  " @if($pic->id==$football->image_id) selected @endif>{{$pic->name}} </option>
+                <option value="{{$pic->id}}" @if($pic->id==$football->image_id) selected @endif>{{$pic->name}} </option>
             @endforeach
         </select>
         <br>

@@ -12,55 +12,13 @@
 </head>
 <body >
 @include('navbar')
-{{--<div class="container">--}}
-{{--    <div class="row">--}}
-{{--        <div class="col">--}}
-{{--            <br>--}}
-{{--<table class="table table-striped table-dark">--}}
 
-{{--    <tr>--}}
-{{--        <td scope="row">--}}
-{{--        {{$football->name}}--}}
-{{--    </td>--}}
-{{--    <td>--}}
-{{--        {{$football->surname}}--}}
-{{--    </td>--}}
-{{--    <td>--}}
-{{--        {{$football->club}}--}}
-{{--    </td>--}}
-{{--        <td>--}}
-{{--            {{$football->position}}--}}
-{{--        </td>--}}
-{{--        <td>--}}
-{{--            {{$football->age}}--}}
-{{--        </td>--}}
-{{--        <td>--}}
-{{--            {{$football->price}}--}}
-{{--        </td>--}}
-{{--    <td>--}}
-{{--        <a href="{{route('football.edit',$football->id)}}">Edit</a>--}}
-
-{{--    </td>--}}
-{{--    <td>--}}
-{{--        <form action="{{route('football.destroy',$football->id)}}" method="post">--}}
-{{--            @csrf--}}
-{{--            <button class="btn btn-primary">Delete</button>--}}
-{{--        </form>--}}
-
-{{--    </td>--}}
-{{--    </tr>--}}
-{{--</table>--}}
-
-{{--<a href="{{route('football.index')}}">Back to main page</a>--}}
-{{--        </div>--}}
-{{--    </div>--}}
-{{--</div>--}}
 <div class="w3-w3-card-4 w3-center  " style="width:75% ;padding-left:310px;" >
 
 
 
         <div class="w3-card-4 w3-margin w3-white" >
-            <img src="@foreach($pictures as $pic) @if($pic->id==$football->image_id)  storage/{{$pic->imgSrc}}   @endif @endforeach" alt="ho" style="width:100%;">
+            <img src="@foreach($picture as $pic) @if($pic->id==$football->image_id)  /storage/{{$pic->imgSrc}}    @endif @endforeach" alt="Nature" style="width:100%;" />
             <div class="w3-container">
                 <h3><b> {{$football->name}} {{$football->surname}} </b></h3>
             </div>

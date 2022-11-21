@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\FootballResource;
 use App\Models\Fottbalers;
 use App\Services\FootballService;
 use Illuminate\Http\Request;
@@ -23,7 +24,8 @@ class FootballerControllerApi extends Controller
              return response()->json([
 
                  'status'=>true,
-                 'football'=>$football
+                 'football'=>FootballResource::collection($football)
+
              ]);
          }catch (\Exception $exception){
              return response()->json([

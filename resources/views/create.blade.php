@@ -42,65 +42,7 @@
 </form>
 <br><br><br>
 
-{{--<div class="container">--}}
-{{--    <div class="row">--}}
-{{--        <div class="col">--}}
-{{--            <br>--}}
-{{--<form action="{{route('football.store')}}" method="POST">--}}
-{{--    @csrf--}}
-{{--    <div class="form-group">--}}
-{{--        <div class="col-md-4 mb-3">--}}
 
-{{--    <label for="idName">Name</label>--}}
-
-{{--    <input id="idName" class="form-control" type="text" name="name" placeholder="Enter name">--}}
-{{--        </div>--}}
-{{--    </div>--}}
-
-
-{{--    <div class="form-group">--}}
-{{--        <div class="col-md-4 mb-3">--}}
-
-{{--    <label>Surname</label>--}}
-{{--    <input  id="idName" class="form-control" type="text" name="surname" placeholder="Enter surname">--}}
-{{--    </div>--}}
-{{--    </div>--}}
-{{--        <div class="form-group">--}}
-{{--            <div class="col-md-4 mb-3">--}}
-
-{{--        <label>Club</label>--}}
-{{--    <input id="idName" class="form-control" type="text" name="club" placeholder="Enter club">--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--            <div class="form-group">--}}
-{{--                <div class="col-md-4 mb-3">--}}
-
-{{--            <label>Position</label>--}}
-{{--    <input id="idName" class="form-control" type="text" name="position" placeholder="Enter position">--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--                <div class="form-group">--}}
-{{--                    <div class="col-md-4 mb-3">--}}
-
-{{--                <label>Age</label>--}}
-{{--    <input id="idName" class="form-control" type="number" name="age" placeholder="Enter age">--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                    <div class="form-group">--}}
-{{--                        <div class="col-md-4 mb-3">--}}
-
-{{--                    <label>Price</label>--}}
-{{--    <input id="idName" class="form-control" type="number" name="price" placeholder="Enter price">--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--    <input  type="submit"  class="btn btn-primary">--}}
-
-{{--</form>--}}
-{{--            <br>--}}
-{{--<a href="{{route('football.index')}}">Back to main page</a>--}}
-{{--        </div>--}}
-{{--    </div>--}}
-{{--</div>--}}
 
 </body>
 </html>
