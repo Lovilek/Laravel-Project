@@ -20,21 +20,21 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
-Route::get('/football',[\App\Http\Controllers\FootballerControllet::class,'index'])->name('football.index');
-Route::get('/football/create',[\App\Http\Controllers\FootballerControllet::class,'create'])->name('football.create');
-Route::get('/football/{id}/edit',[\App\Http\Controllers\FootballerControllet::class,'edit'])->name('football.edit');
-Route::post('/football/{id}/destroy',[\App\Http\Controllers\FootballerControllet::class,'destroy'])->name('football.destroy');
-Route::post('/football',[\App\Http\Controllers\FootballerControllet::class,'store'])->name('football.store');
-Route::post('/football/{id}',[\App\Http\Controllers\FootballerControllet::class,'update'])->name('football.update');
-Route::get('/football/{id}',[\App\Http\Controllers\FootballerControllet::class,'show'])->name('football.show');
+Route::get('/football',[\App\Http\Controllers\FootballerControllet::class,'index'])->middleware(['auth'])->name('football.index');
+Route::get('/football/create',[\App\Http\Controllers\FootballerControllet::class,'create'])->middleware(['auth','admin'])->name('football.create');
+Route::get('/football/{id}/edit',[\App\Http\Controllers\FootballerControllet::class,'edit'])->middleware(['auth'])->name('football.edit');
+Route::post('/football/{id}/destroy',[\App\Http\Controllers\FootballerControllet::class,'destroy'])->middleware(['auth'])->name('football.destroy');
+Route::post('/football',[\App\Http\Controllers\FootballerControllet::class,'store'])->middleware(['auth'])->name('football.store');
+Route::post('/football/{id}',[\App\Http\Controllers\FootballerControllet::class,'update'])->middleware(['auth'])->name('football.update');
+Route::get('/football/{id}',[\App\Http\Controllers\FootballerControllet::class,'show'])->middleware(['auth'])->name('football.show');
 
-Route::get('/image',[\App\Http\Controllers\ImageController::class,'index'])->name('image.index');
-Route::get('/image/create',[\App\Http\Controllers\ImageController::class,'create'])->name('image.create');
-Route::get('/image/{id}/edit',[\App\Http\Controllers\ImageController::class,'edit'])->name('image.edit');
-Route::post('/image/{id}/destroy',[\App\Http\Controllers\ImageController::class,'destroy'])->name('image.destroy');
-Route::post('/image',[\App\Http\Controllers\ImageController::class,'store'])->name('image.store');
-Route::post('/image/{id}',[\App\Http\Controllers\ImageController::class,'update'])->name('image.update');
-Route::get('/image/{id}',[\App\Http\Controllers\ImageController::class,'show'])->name('image.show');
+Route::get('/image',[\App\Http\Controllers\ImageController::class,'index'])->middleware(['auth'])->name('image.index');
+Route::get('/image/create',[\App\Http\Controllers\ImageController::class,'create'])->middleware(['auth'])->name('image.create');
+Route::get('/image/{id}/edit',[\App\Http\Controllers\ImageController::class,'edit'])->middleware(['auth'])->name('image.edit');
+Route::post('/image/{id}/destroy',[\App\Http\Controllers\ImageController::class,'destroy'])->middleware(['auth'])->name('image.destroy');
+Route::post('/image',[\App\Http\Controllers\ImageController::class,'store'])->middleware(['auth'])->name('image.store');
+Route::post('/image/{id}',[\App\Http\Controllers\ImageController::class,'update'])->middleware(['auth'])->name('image.update');
+Route::get('/image/{id}',[\App\Http\Controllers\ImageController::class,'show'])->middleware(['auth'])->name('image.show');
 
 
 

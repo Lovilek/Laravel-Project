@@ -11,7 +11,16 @@ use phpseclib3\Crypt\Hash;
 class authapicontroller extends Controller
 {
     public function register(Request $request){
-       $user =User::create([
+
+        $user=User::where('email',$request->email)->first();
+        if($user){
+            return response()->json([
+                'success'=>true,
+                'message'=>'Email already exists'
+            ]);
+
+        }
+          User::create([
             'name'=>$request->name,
             'email'=>$request->email,
             'password'=>\Illuminate\Support\Facades\Hash::make($request->password),
