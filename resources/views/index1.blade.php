@@ -25,7 +25,7 @@
         </div>
         <div class="w3-container">
             <p>{{$footballers->position}} {{$footballers->age}} лет Стоимость {{$footballers->price}}$</p>
-            <a type="button" class="btn btn-primary" href="{{route('football.edit',$footballers->id)}}">Edit</a>  <a type="button" class="btn btn-primary" href="{{route('football.show',$footballers->id)}}">Show</a>
+           @if(\Illuminate\Support\Facades\Auth::user()->isAdmin()) <a type="button" class="btn btn-primary" href="{{route('football.edit',$footballers->id)}}">Edit</a>@endif  <a type="button" class="btn btn-primary" href="{{route('football.show',$footballers->id)}}">Show</a>
             <br>
             <br>
             <div class="w3-row">

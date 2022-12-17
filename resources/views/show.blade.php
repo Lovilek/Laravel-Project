@@ -24,12 +24,13 @@
             </div>
             <div class="w3-container">
                 <p>{{$football->position}} {{$football->age}} лет Стоимость {{$football->price}}$</p>
-                <a type="button" class="btn btn-primary" href="{{route('football.edit',$football->id)}}">Edit</a>
+                @if(\Illuminate\Support\Facades\Auth::user()->isAdmin()) <a type="button" class="btn btn-primary" href="{{route('football.edit',$football->id)}}">Edit</a>
                 <br><br>
                 <form action="{{route('football.destroy',$football->id)}}" method="post">
 @csrf
            <button class="btn btn-danger">Delete</button>
         </form>
+                @endif
                 <br>
                 <br>
                 <div class="w3-row">

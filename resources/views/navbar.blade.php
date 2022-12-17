@@ -13,6 +13,7 @@
                     <a class="nav-link" href="{{route('football.index')}}">Main Page</a>
 
                 </li>
+                @if(\Illuminate\Support\Facades\Auth::user()->isAdmin())
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('football.create')}}">Create </a>
 
@@ -25,6 +26,7 @@
                     <a class="nav-link" href="{{route('image.create')}}"> Create Images </a>
 
                 </li>
+                @endif
                 <li class="nav-item">
                     <form action="{{route('logout')}}" method="post">
                         @csrf
