@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\football_club;
 use App\Models\Fottbalers;
 use App\Models\Image;
 use Illuminate\Http\Request;
@@ -23,7 +24,8 @@ class FootballerControllet extends Controller
     public function create()
     {
         $pictures=Image::all();
-        return view('create',['pictures'=>$pictures]);
+        $clubs=football_club::all();
+        return view('create',['pictures'=>$pictures,'clubs'=>$clubs]);
 
     }
 
@@ -33,7 +35,7 @@ class FootballerControllet extends Controller
         Fottbalers::create([
             'name'=>$request->name,
             'surname'=>$request->surname,
-            'club'=>$request->club,
+            'football_clubs_id'=>$request->football_clubs_id,
             'position'=>$request->position,
             'age'=>$request->age,
             'price'=>$request->price,
@@ -57,9 +59,10 @@ class FootballerControllet extends Controller
     public function edit($id)
     {
         $pictures=Image::all();
+        $clubs=football_club::all();
 
         $footballer=Fottbalers::find($id);
-         return view('edit',['football'=>$footballer,'pictures'=>$pictures]);
+         return view('edit',['football'=>$footballer,'pictures'=>$pictures,'clubs'=>$clubs]);
     }
 
 
@@ -70,7 +73,7 @@ class FootballerControllet extends Controller
         $footballer->update([
             'name'=>$request->name,
             'surname'=>$request->surname,
-            'club'=>$request->club,
+            'football_clubs_id'=>$request->football_clubs_id,
             'position'=>$request->position,
             'age'=>$request->age,
             'price'=>$request->price,

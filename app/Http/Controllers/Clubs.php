@@ -22,70 +22,67 @@ class Clubs extends Controller
 
     public function create()
     {
-        $pictures=Image::all();
-        return view('create',['pictures'=>$pictures]);
+        return view('clubs/createClub');
 
     }
 
 
     public function store(Request $request)
     {
-        Fottbalers::create([
-            'name'=>$request->name,
-            'surname'=>$request->surname,
-            'club'=>$request->club,
-            'position'=>$request->position,
-            'age'=>$request->age,
-            'price'=>$request->price,
-            'image_id'=>$request->image_id
+        football_club::create([
+            'club_name'=>$request->club_name,
+            'image'=>$request->image,
+
 
         ]);
-        return redirect()->route('football.index');
+        return redirect()->route('clubs.index');
     }
 
 
     public function show($id)
     {
+        $pictures=Image::all();
 
-        $Clubs=Fottbalers::find($id);
-        return view('clubs/showPlayers',['Clubs'=>$Clubs]);
+        $Clubs=Fottbalers::all();
+        return view('clubs/showPlayers',['Clubs'=>$Clubs,'id_club'=>$id,'pictures'=>$pictures]);
     }
 
 
     public function edit($id)
     {
-        $pictures=Image::all();
 
-        $footballer=Fottbalers::find($id);
-        return view('edit',['football'=>$footballer,'pictures'=>$pictures]);
+        $clubs=football_club::find($id);
+        return view('clubs/editClub',['clubs'=>$clubs]);
     }
 
 
     public function update(Request $request, $id)
     {
-        $footballer=Fottbalers::find($id);
+        $clubs=football_club::find($id);
 
-        $footballer->update([
-            'name'=>$request->name,
-            'surname'=>$request->surname,
-            'club'=>$request->club,
-            'position'=>$request->position,
-            'age'=>$request->age,
-            'price'=>$request->price,
-            'image_id'=>$request->image_id
-
-
+        $clubs->update([
+            'club_name'=>$request->club_name,
+            'image'=>$request->image
 
         ]);
-        return redirect()->route('football.index');
+        return redirect()->route('clubs.index');
     }
 
 
     public function destroy($id)
     {
-        $footballer=Fottbalers::find($id);
-        $footballer->delete();
-        return redirect()->route('football.index');
+        $footballer=Fottbalers::all();
+        $clubs=football_club::find($id);
+
+        foreach ($footballer as $foot){
+            if($foot->football_clubs_id==$id){
+                $foot->delete();
+            }
+        }
+
+
+        $clubs->delete();
+        return redirect()->route('clubs.index');
 
     }
 }

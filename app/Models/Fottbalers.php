@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Fottbalers extends Model
 {
     use HasFactory;
-    protected $fillable=['name','surname','club','position','age','price','image_id'];
+    protected $fillable=['name','surname','position','age','price','image_id','football_clubs_id'];
 
 }

@@ -22,8 +22,14 @@
         <input type="text" name="name">
         <label for="username">Surname:</label>
         <input type="text" name="surname">
+
         <label for="username">Club:</label>
-        <input type="text" name="club">
+
+        <select name="football_clubs_id">
+            @foreach($clubs as $club)
+                <option value="{{$club->id}}">{{$club->club_name}}</option>
+            @endforeach
+        </select>
         <label for="username">Position:</label>
         <input type="text" name="position">
         <label for="username">Age:</label>

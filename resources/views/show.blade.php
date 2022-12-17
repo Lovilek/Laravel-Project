@@ -23,7 +23,7 @@
                 <h3><b> {{$football->name}} {{$football->surname}} </b></h3>
             </div>
             <div class="w3-container">
-                <p>{{$football->position}} {{$football->age}} лет Стоимость {{$football->price}}$</p>
+                <p>{{$football->position}} Возвраст {{$football->age}}  Стоимость {{$football->price}}$</p>
                 @if(\Illuminate\Support\Facades\Auth::user()->isAdmin()) <a type="button" class="btn btn-primary" href="{{route('football.edit',$football->id)}}">Edit</a>
                 <br><br>
                 <form action="{{route('football.destroy',$football->id)}}" method="post">

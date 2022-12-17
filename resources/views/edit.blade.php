@@ -79,13 +79,20 @@
         <label for="username">Surname:</label>
         <input type="text" name="surname"value="{{$football->surname}}">
         <label for="username">Club:</label>
-        <input type="text" name="club" value="{{$football->club}}">
+
+        <select name="football_clubs_id">
+            @foreach($clubs as $club)
+                <option value="{{$club->id}}">{{$club->club_name}}</option>
+            @endforeach
+        </select>
         <label for="username">Position:</label>
         <input type="text" name="position"value="{{$football->position}}">
         <label for="username">Age:</label>
         <input type="number" name="age"value="{{$football->age}}">
         <label for="username">Price:</label>
         <input type="number" name="price"value="{{$football->price}}">
+        <label for="username">Image:</label>
+
         <select name="image_id">
             @foreach($pictures as $pic)
                 <option value="{{$pic->id}}" @if($pic->id==$football->image_id) selected @endif>{{$pic->name}} </option>

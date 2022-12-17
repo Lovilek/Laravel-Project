@@ -18,12 +18,12 @@
     @foreach($allClubs as $Clubs)
 
         <div class="w3-card-4 w3-margin w3-white" >
-            <img src="{{$Clubs->image}}" alt="">
+            <img src="{{$Clubs->image}}" alt="" style="width:100%; height: 550px">
             <div class="w3-container">
                 <h3><b> {{$Clubs->club_name}}</b></h3>
             </div>
             <div class="w3-container">
-                @if(\Illuminate\Support\Facades\Auth::user()->isAdmin()) <a type="button" class="btn btn-primary" href="{{route('football.edit',$Clubs->id)}}">Edit</a>@endif  <a type="button" class="btn btn-primary" href="{{route('clubs.show',$Clubs->id)}}">Show</a>
+                @if(\Illuminate\Support\Facades\Auth::user()->isAdmin()) <a type="button" class="btn btn-primary" href="{{route('clubs.edit',$Clubs->id)}}">Edit</a>@endif  <a type="button" class="btn btn-primary" href="{{route('clubs.show',$Clubs->id)}}">Show Players</a>
                 <br>
                 <br>
                 <div class="w3-row">

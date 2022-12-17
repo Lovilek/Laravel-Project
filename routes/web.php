@@ -36,8 +36,18 @@ Route::post('/image',[\App\Http\Controllers\ImageController::class,'store'])->mi
 Route::post('/image/{id}',[\App\Http\Controllers\ImageController::class,'update'])->middleware(['auth','admin'])->name('image.update');
 Route::get('/image/{id}',[\App\Http\Controllers\ImageController::class,'show'])->middleware(['auth'])->name('image.show');
 
-Route::get('/clubs', [Clubs::class, 'index'])->middleware(['auth']);
+Route::get('/clubs', [Clubs::class, 'index'])->middleware(['auth'])->name('clubs.index');
+Route::get('/clubs/create',[Clubs::class,'create'])->middleware(['auth'])->name('clubs.create');
+Route::post('/clubs',[Clubs::class,'store'])->middleware(['auth','admin'])->name('clubs.store');
+Route::get('/clubs/{id}/edit',[Clubs::class,'edit'])->middleware(['auth','admin'])->name('clubs.edit');
+Route::post('/clubs/{id}',[Clubs::class,'update'])->middleware(['auth','admin'])->name('clubs.update');
+Route::post('/clubs/{id}/destroy',[Clubs::class,'destroy'])->middleware(['auth','admin'])->name('clubs.destroy');
+
+
 Route::get('/clubs/{id}', [Clubs::class, 'show'])->middleware(['auth'])->name('clubs.show');
+
+
+
 
 
 

@@ -10,7 +10,11 @@
             <ul class="navbar-nav mr-auto">
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('football.index')}}">Main Page</a>
+                    <a class="nav-link" href="{{route('clubs.index')}}">Main Page</a>
+
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('football.index')}}">Players</a>
 
                 </li>
                 @if(\Illuminate\Support\Facades\Auth::user()->isAdmin())
@@ -26,6 +30,10 @@
                     <a class="nav-link" href="{{route('image.create')}}"> Create Images </a>
 
                 </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('clubs.create')}}"> Create Club </a>
+
+                    </li>
                 @endif
                 <li class="nav-item">
                     <form action="{{route('logout')}}" method="post">
