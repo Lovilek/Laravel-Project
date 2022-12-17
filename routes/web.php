@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Clubs;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -36,8 +36,8 @@ Route::post('/image',[\App\Http\Controllers\ImageController::class,'store'])->mi
 Route::post('/image/{id}',[\App\Http\Controllers\ImageController::class,'update'])->middleware(['auth','admin'])->name('image.update');
 Route::get('/image/{id}',[\App\Http\Controllers\ImageController::class,'show'])->middleware(['auth'])->name('image.show');
 
-
-
+Route::get('/clubs', [Clubs::class, 'index'])->middleware(['auth']);
+Route::get('/clubs/{id}', [Clubs::class, 'show'])->middleware(['auth'])->name('clubs.show');
 
 
 
